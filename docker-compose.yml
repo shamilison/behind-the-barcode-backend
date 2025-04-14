@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  postgres:
+    build: databases/postgres
+    container_name: btb-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - btb-postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  btb-postgres-data:
